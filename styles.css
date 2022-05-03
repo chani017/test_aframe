@@ -1,25 +1,47 @@
-/* CSS files add styling rules to your content */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-body {
-    font-family: helvetica, arial, sans-serif;
-    margin: 2em;
-  }
-  
-  h1 {
-  /*  font-style: italic;
-    color: #373fff;
-  */
-    font-size: 1.35em;
-  }
-  
-  div#text {
+body{
+    height: 100vh;
+    background: url(./assets/images/background.png) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+a{
+    color: #FFFFFF;
+}
+
+.about{
+    font-family: 'Pretendard';
+    font-weight: 700;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.main-title{
+    font-family: 'Pretendard';
+    margin-top: -50px;
+    color: #FFFFFF;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.sub-title{
     position: absolute;
-    left: 6px; 
-    top: 6px;
-    padding: 6px;
-    /*
-    text-shadow: 0 0 5px white;
-    */
-    max-width: 350px;
-    background-color: rgba(255, 255, 255, 0.7)
-  }
+    top: 96px;
+    left: 230px;
+    font-family: 'Pretendard';
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    text-align: left;
+}
+
+footer{
+    color: #FFFFFF;
+    font-family: 'Pretendard';
+    font-weight: 700;
+    text-align: right;
+    font-size: 10px;
+}
