@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <title>XR Spinosaurus</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
     
     <script>
@@ -26,32 +24,8 @@
     <script src="https://unpkg.com/aframe-extras@3.3.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 
-    <script>
-      // Define a few custom components useful for AR mode. While these are somewhat reusable,
-      // I recommend checking if there are officially supported alternatives before copying
-      // these into new projects.
-    
-      // See also https://github.com/aframevr/aframe/pull/4356
-      AFRAME.registerComponent('hide-in-ar-mode', {
-        // Set this object invisible while in AR mode.
-        init: function () {
-          this.el.sceneEl.addEventListener('enter-vr', (ev) => {
-            this.wasVisible = this.el.getAttribute('visible');
-            if (this.el.sceneEl.is('ar-mode')) {
-              this.el.setAttribute('visible', false);
-            }
-          });
-          this.el.sceneEl.addEventListener('exit-vr', (ev) => {
-            if (this.wasVisible) this.el.setAttribute('visible', true);
-          });
-        }
-      });
-      
+    <script>     
       AFRAME.registerComponent('ar-shadows', {
-        // Swap an object's material to a transparent shadows-only material while
-        // in AR mode. Intended for use with a ground plane. The object is also
-        // set visible while in AR mode, this is useful if it's hidden in other
-        // modes due to them using a 3D environment.
         schema: {
           opacity: {default: 0.3}
         },
@@ -83,10 +57,10 @@
         <a-asset-item id="spinosaurus" src="./assets/models/portal.gltf" response-type="arraybuffer"></a-asset-item>
       </a-assets>
       
-      <a-camera position="0 1.2 0"></a-camera>
+      <a-camera position="0 0 0"></a-camera>
       
-      <a-entity id="dino" position="-1 0 -3" scale="0.5 0.5 0.5">
-        <a-entity position="0 2.15 0" rotation="0 55 0"
+      <a-entity id="dino" position="0 0 -2" scale="1.3 1.3 1.3">
+        <a-entity position="0 0 0" rotation="0 90 0"
                   gltf-model="#spinosaurus"
                   animation-mixer
                   shadow="cast: true; receive: false"></a-entity>
