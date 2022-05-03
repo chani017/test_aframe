@@ -12,6 +12,9 @@ a{
 }
 
 .about{
+    position: absolute;
+    top: 0px;
+    left: 200px;
     font-family: 'Pretendard';
     font-weight: 700;
     margin-top: 50px;
@@ -19,6 +22,9 @@ a{
 }
 
 .main-title{
+    position: absolute;
+    top: 70px;
+    left: 10px;
     font-family: 'Pretendard';
     margin-top: -50px;
     color: #FFFFFF;

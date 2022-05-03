@@ -50,16 +50,6 @@
   </script>
   </head>  
   <body>
-    <div class="about">
-      <a href="#" onclick="location.href='about.html'">About</a>
-    </div>
-    <div class="main-title">
-      <p>한솔동</br>백제고분</br>역사공원</br>AR 가이드</p>
-    </div>
-    <div class="sub-title">
-      <p>Hansol-dong</br>Baekje Tombs</br>Historical Park</br>AR Guide</p>
-    </div>
-
     <a-scene>
       <a-assets timeout="30000">
         <a-asset-item id="portal" src="./assets/models/portal.gltf" response-type="arraybuffer"></a-asset-item>
@@ -94,8 +84,15 @@
                visible="false"></a-plane>
     </a-scene>
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
+    <div class="about">
+      <a href="#" onclick="location.href='about.html'">About</a>
+    </div>
+    <div class="main-title">
+      <p>한솔동</br>백제고분</br>역사공원</br>AR 가이드</p>
+    </div>
+    <div class="sub-title">
+      <p>Hansol-dong</br>Baekje Tombs</br>Historical Park</br>AR Guide</p>
+    </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:50px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
   </body>
