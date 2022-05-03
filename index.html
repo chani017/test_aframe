@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles.css">
     
     <script>
       // WebXR requires HTTPS, so the site doesn't work if someone manually enters
@@ -18,7 +18,6 @@
         window.location = window.location.href.replace('http:', 'https:');        
       }
     </script>    
-    
     <!-- import the webpage's javascript files -->
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@3.3.0/dist/aframe-extras.min.js"></script>
@@ -51,15 +50,24 @@
   </script>
   </head>  
   <body>
+    <div class="about">
+      <a href="#" onclick="location.href='about.html'">About</a>
+    </div>
+    <div class="main-title">
+      <p>한솔동</br>백제고분</br>역사공원</br>AR 가이드</p>
+    </div>
+    <div class="sub-title">
+      <p>Hansol-dong</br>Baekje Tombs</br>Historical Park</br>AR Guide</p>
+    </div>
 
     <a-scene>
       <a-assets timeout="30000">
         <a-asset-item id="portal" src="./assets/models/portal.gltf" response-type="arraybuffer"></a-asset-item>
       </a-assets>
       
-      <a-camera position="0 0 0"></a-camera>
+      <a-camera position="0 1 2"></a-camera>
       
-      <a-entity id="dino" position="0 0 -2" scale="1.3 1.3 1.3">
+      <a-entity id="portal" position="0 0 -2" scale="1.3 1.3 1.3">
         <a-entity position="0 0 0" rotation="0 90 0"
                   gltf-model="#portal"
                   animation-mixer
@@ -76,29 +84,19 @@
                       shadowCameraBottom: -5;
                       shadowCameraTop: 5;"
                id="light"
-               target="dino"
+               target="portal"
                position="-5 3 1.5"></a-light>
 
       <!-- This shadow-receiving plane is only visible in AR mode. -->
-      <a-plane height="15" width="15" position="0 0 -3" rotation="-90 0 0"
+      <a-plane height="15" width="15" position="0 0 -3" rotation="-70 0 0"
                shadow="receive: true"
                ar-shadows="opacity: 0.3"
                visible="false"></a-plane>
     </a-scene>
-    
-      <div class="about">
-          <a href="#" onclick="location.href='about.html'">About</a>
-      </div>
-      <div class="main-title">
-          <p>한솔동</br>백제고분</br>역사공원</br>AR 가이드</p>
-      </div>
-      <div class="sub-title">
-        <p>Hansol-dong</br>Baekje Tombs</br>Historical Park</br>AR Guide</p>
-      </div>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <div class="glitchButton" style="position:fixed;top:20px;right:50px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
   </body>
 </html>
